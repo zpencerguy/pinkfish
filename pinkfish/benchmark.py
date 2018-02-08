@@ -86,8 +86,7 @@ class Benchmark():
 
     def run(self):
         self._ts = pf.fetch_timeseries(self._symbol)
-        self._ts = pf.select_tradeperiod(self._ts, self._start,
-                                         self._end, True, False)
+        self._ts = pf.select_tradeperiod(self._ts, self._start, self._end)
         self._tlog = pf.TradeLog()
         self._dbal = pf.DailyBal()
 
