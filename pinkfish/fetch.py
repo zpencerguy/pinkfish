@@ -65,14 +65,14 @@ def fetch_timeseries(symbol, dir_name='data', use_cache=True, from_year=1900):
 #    ts['close'] = ts['close'] * ts['adj_close'] / ts['close']
 #    return ts
 
-def select_tradeperiod(ts, start, end, use_adj=False, pad=True):
+def select_tradeperiod(ts, start, end, pad=True):
     """
     Select a time slice of the data to trade from ts.  If pad=True,
     back date a year to allow time for long term indicators,
     e.g. 200sma is become valid
     """
-    if use_adj:
-        _adj_prices(ts)
+#    if use_adj:
+#        _adj_prices(ts)
         
     if start < ts.index[0]: start = ts.index[0]
     if end > ts.index[-1]: end = ts.index[-1]
