@@ -55,15 +55,15 @@ def fetch_timeseries(symbol, dir_name='data', use_cache=True, from_year=1900):
     ts = _adj_column_names(ts)
     return ts
 
-def _adj_prices(ts):
-    """
-    Back adjust prices relative to adj_close for dividends and splits
-    """
-    ts['open'] = ts['open'] * ts['adj_close'] / ts['close'] 
-    ts['high'] = ts['high'] * ts['adj_close'] / ts['close']
-    ts['low'] = ts['low'] * ts['adj_close'] / ts['close']
-    ts['close'] = ts['close'] * ts['adj_close'] / ts['close']
-    return ts
+#def _adj_prices(ts):
+#    """
+#    Back adjust prices relative to adj_close for dividends and splits
+#    """
+#    ts['open'] = ts['open'] * ts['adj_close'] / ts['close'] 
+#    ts['high'] = ts['high'] * ts['adj_close'] / ts['close']
+#    ts['low'] = ts['low'] * ts['adj_close'] / ts['close']
+#    ts['close'] = ts['close'] * ts['adj_close'] / ts['close']
+#    return ts
 
 def select_tradeperiod(ts, start, end, use_adj=False, pad=True):
     """
